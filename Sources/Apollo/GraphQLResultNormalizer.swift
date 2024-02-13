@@ -3,8 +3,7 @@ import Foundation
 import ApolloAPI
 #endif
 
-struct ResultNormalizerFactory {
-  private init() {}
+enum ResultNormalizerFactory {
 
   static func selectionSetDataNormalizer() -> SelectionSetDataResultNormalizer {
     SelectionSetDataResultNormalizer()
@@ -13,6 +12,7 @@ struct ResultNormalizerFactory {
   static func networkResponseDataNormalizer() -> RawJSONResultNormalizer {
     RawJSONResultNormalizer()
   }
+
 }
 
 class BaseGraphQLResultNormalizer: GraphQLResultAccumulator {
